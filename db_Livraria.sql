@@ -164,6 +164,9 @@ insert into tbEscreve(idLivro,idAutor) values( 10, 4);
 
 select * from tbEscreve order by idLivro;
 
+
+-- delete from tbGenero
+
 -- updates
 -- autor
 update tbAutor set nomeAutor = 'Camilo Castelo Branco' where idAutor = 10;
@@ -211,4 +214,23 @@ update tbIntensDaVenda set idLivro = 9 where idVenda = 5;
 
 -- escreve
 
+
+delete from tbAutor where idAutor = 6;
+delete from tbAutor where idAutor = 7;
+delete from tbAutor where idAutor = 8;
+delete from tbAutor where idAutor = 9;
+delete from tbAutor where idAutor = 10;
+	select * from tbAutor;
+
+delete from tbGenero where idGene = 6;
+delete from tbGenero where idGene = 7;
+delete from tbGenero where idGene = 8;
+delete from tbGenero where idGene = 9;
+delete from tbGenero where idGene = 10;
+
+delete from tbCliente where idCli = 6;
+delete from tbCliente where idCli = 7;
+delete from tbCliente where idCli = 8;
+delete from tbCliente where idCli = 9;
+delete from tbCliente where idCli = 10;
 
