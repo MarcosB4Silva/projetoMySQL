@@ -108,13 +108,9 @@ select cli.nome as 'Nome cliente', cli.email as 'Email cliente', prod.descricao 
 select usu.nome as 'Usuario', func.nome as 'Funcionario', venda.dtvenda 'Data Venda', venda.quantidade as 'Quantidade vendida', venda.valorTotal as 'Valor total' from tbUsuarios as usu inner join tbFuncionarios as func on usu.idFunc = func.idFunc inner join tbVendas as venda on usu.idUser = venda.idVenda;
 -- desafio : tbcliente > nomecli, dtvenda, nomeprod, nomeforn 
 select cli.nome as 'Cliente', venda.dtVenda as 'Data da venda', prod.descricao as 'Produto', forn.nome as 'Fornecedor' from tbClientes as cli inner join tbVendas as venda on cli.idCli = venda.idCli inner join tbProdutos as prod on venda.idProd = prod.idProd inner join tbFornecedores as  forn on prod.idForn = forn.idForn;
--- Perguntando para tabela de funcionarios
--- nome do funcionário
--- nome do usuário
--- data da venda
--- valor total
--- nome do produto
--- data da entrada
--- nome do fornecedor
--- cnpj do fornecedor
+--  tabela de funcionarios > nome do funcionário > nome do usuário > data da venda > valor total > nome do produto > data da entrada > nome do fornecedor > cnpj do fornecedor
 select func.nome as 'Funcionário', usu.nome as 'Usuario', venda.dtvenda as 'Data da venda', venda.valorTotal as 'Total', prod.descricao as 'Produto', prod.dtEntrada as 'Data da entrada', forn.nome as 'Fornecedor', forn.cnpj from tbFuncionarios as func inner join tbUsuarios as usu on func.idFunc = usu.idFunc inner join tbVendas as venda on usu.idUser = venda.idUser inner join tbProdutos as prod on venda.idProd = prod.idProd inner join tbFornecedores as forn on prod.idForn = forn.idForn;
+-- tbfunc
+select prod.descricao, prod.quantidade from tbFuncionarios as func left join tbProdutos as prod on func.idFunc = prod.idProd;
+select prod.descricao, prod.quantidade from tbFuncionarios as func right join tbProdutos as prod on func.idFunc = prod.idProd;
+select prod.descricao, prod.quantidade from tbFuncionarios as func inner join tbProdutos as prod on func.idFunc = prod.idProd;
